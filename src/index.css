@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------
+   Theme tokens (space-separated RGB channels so Tailwind can
+   apply opacity, e.g. bg-card/80, border-accent/20)
+------------------------------------------------------------ */
+:root {
+  --page: 250 249 245;
+  --subtle: 245 242 232;
+  --card: 255 255 255;
+  --line: 229 224 210;
+  --ink: 24 24 22;
+  --muted: 92 91 84;
+  --accent: 180 126 18;
+  --g1: 180 126 18;
+  --g2: 218 165 32;
+  --g3: 244 196 72;
+}
+
+.dark {
+  --page: 18 18 17;
+  --subtle: 27 27 24;
+  --card: 32 32 29;
+  --line: 61 59 50;
+  --ink: 250 249 245;
+  --muted: 184 181 169;
+  --accent: 244 196 72;
+  --g1: 244 196 72;
+  --g2: 218 165 32;
+  --g3: 255 224 130;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: rgb(var(--page));
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-page font-sans text-ink antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  ::selection {
+    background: rgb(var(--accent) / 0.25);
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgb(var(--page));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(var(--line));
+    border-radius: 999px;
+    border: 2px solid rgb(var(--page));
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--accent) / 0.6);
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply mx-auto max-w-6xl px-5 sm:px-8;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/10 px-3.5 py-1.5
+           text-xs font-semibold uppercase tracking-[0.14em] text-accent;
+  }
+
+  .section-heading {
+    @apply text-3xl font-extrabold tracking-tight text-ink sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15];
+  }
+
+  .section-lead {
+    @apply mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-lg;
+  }
+
+  .text-gradient {
+    background-image: linear-gradient(100deg, rgb(var(--g1)), rgb(var(--g2)) 55%, rgb(var(--g3)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .btn {
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold
+           transition-all duration-300 active:scale-[0.97] disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-amber-500 to-yellow-400 text-neutral-950 shadow-lg shadow-amber-500/25
+           hover:-translate-y-0.5 hover:shadow-xl hover:shadow-amber-500/35;
+  }
+
+  .btn-ghost {
+    @apply btn border border-line bg-card text-ink shadow-sm
+           hover:-translate-y-0.5 hover:border-accent/50 hover:text-accent;
+  }
+
+  .card {
+    @apply rounded-2xl border border-line bg-card shadow-sm;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-full border border-line bg-subtle px-3 py-1 text-xs font-medium text-muted;
+  }
+
+  .input {
+    @apply w-full rounded-xl border border-line bg-page px-4 py-3 text-sm text-ink placeholder:text-muted/70
+           transition-all duration-200 focus:border-accent focus:outline-none focus:ring-4 focus:ring-accent/15;
+  }
+
+  /* Soft cursor-following highlight on cards (see utils/pointer.js) */
+  .spotlight {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+  }
+  .spotlight::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    background: radial-gradient(
+      380px circle at var(--mx, 50%) var(--my, 50%),
+      rgb(var(--accent) / 0.13),
+      transparent 45%
+    );
+  }
+  .spotlight:hover::before {
+    opacity: 1;
+  }
+
+  /* Subtle dotted background used behind the hero */
+  .bg-dots {
+    background-image: radial-gradient(rgb(var(--ink) / 0.09) 1px, transparent 1px);
+    background-size: 26px 26px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 35%, #000 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 35%, #000 30%, transparent 75%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
