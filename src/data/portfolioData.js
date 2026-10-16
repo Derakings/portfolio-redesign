@@ -24,9 +24,9 @@ export const personalInfo = {
   linkedin: "https://www.linkedin.com/in/chidera-ojimba",
   github: "https://github.com/Derakings",
   resumeUrl:
-    "https://docs.google.com/document/d/1iCayWbgMUgi5TcuVhwXL7M9XsqL9fr3d/edit?usp=sharing&ouid=116729427123835559428&rtpof=true&sd=true",
+    "https://docs.google.com/document/d/1iDMIpTeeFSWL4rmoTX438kHJz-zKTdWw/edit?usp=sharing&ouid=116729427123835559428&rtpof=true&sd=true",
   // Photo lives in /public
-  photoUrl: "/DERA.jpg",
+  photoUrl: "/profile-pic.jpeg",
   photoAlt: "Portrait of Chidera Ojimba",
 };
 
@@ -251,10 +251,20 @@ export const stats = [
   { number: "3", label: "Certifications" },
 ];
 
+export const experience = [
+  {
+    company: "Newsbridge AI",
+    role: "Cloud & DevOps Engineer",
+    summary:
+      "Building and maintaining cloud infrastructure, deployment automation, and reliable delivery workflows.",
+  },
+];
+
 export const navLinks = [
   { label: "About", to: "about" },
   { label: "Video", to: "video" },
   { label: "Skills", to: "skills" },
+  { label: "Experience", to: "experience" },
   { label: "Projects", to: "projects" },
   { label: "Contact", to: "contact" },
 ];

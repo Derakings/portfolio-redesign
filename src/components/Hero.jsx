@@ -148,16 +148,13 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
           className="relative mx-auto w-full max-w-[25rem] lg:ml-auto lg:mr-4 lg:max-w-[27rem]"
         >
-          <div className="absolute inset-x-5 -bottom-4 top-5 rounded-[2rem] bg-amber-400/20 dark:bg-amber-300/10" aria-hidden="true" />
-          <div className="relative rounded-[2rem] border border-line/80 bg-card p-2.5 shadow-[0_24px_70px_-28px_rgba(24,24,22,0.38)] sm:p-3">
-            <img
-              src={personalInfo.photoUrl}
-              alt={personalInfo.photoAlt}
-              width="480"
-              height="600"
-              className="aspect-[4/5] w-full rounded-[1.5rem] object-cover object-center"
-            />
-          </div>
+          <img
+            src={personalInfo.photoUrl}
+            alt={personalInfo.photoAlt}
+            width="480"
+            height="600"
+            className="aspect-[4/5] w-full rounded-[2rem] object-cover object-center [mask-image:radial-gradient(ellipse_78%_82%_at_50%_46%,#000_68%,transparent_100%)]"
+          />
         </motion.div>
       </div>
 

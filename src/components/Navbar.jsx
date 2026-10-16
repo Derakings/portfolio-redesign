@@ -66,7 +66,7 @@ export default function Navbar({ theme, onToggleTheme, onOpenPalette }) {
           aria-label="Back to top"
         >
           <img
-            src="/logo.svg"
+            src="/brand-logo.png"
             alt=""
             className="h-9 w-9 rounded-xl shadow-md shadow-amber-600/20 transition-transform duration-300 group-hover:scale-105 group-hover:rotate-3"
           />

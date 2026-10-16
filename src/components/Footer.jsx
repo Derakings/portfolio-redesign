@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="section-container py-12">
         <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
           <div className="flex items-center gap-3">
-            <img src="/logo.svg" alt="" className="h-10 w-10 rounded-xl shadow-md shadow-amber-600/20" />
+            <img src="/brand-logo.png" alt="" className="h-10 w-10 rounded-xl shadow-md shadow-amber-600/20" />
             <div>
               <p className="text-sm font-bold text-ink">{personalInfo.name}</p>
               <p className="text-xs text-muted">{personalInfo.title}</p>
