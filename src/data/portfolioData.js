@@ -232,17 +232,6 @@ export const projects = [
     liveUrl: null,
     featured: false,
   },
-  {
-    id: 6,
-    title: "Oneflesh DevOps (Freelance)",
-    description:
-      "Automated and deployed a secure, scalable multi-tier microservice app - an international christian dating app called (OneFlesh) using AWS services and serverless architecture, including VPC, EC2, MongoDB, CloudWatch monitoring to support their web application.",
-    tags: ["AWS", "AWS Lambda", "EC2", "MongoDB", "Serverless"],
-    categories: ["AWS"],
-    githubUrl: null,
-    liveUrl: "https://oneflesh.ca",
-    featured: false,
-  },
 ];
 
 export const stats = [
@@ -252,6 +241,12 @@ export const stats = [
 ];
 
 export const experience = [
+  {
+    company: "Oneflesh",
+    role: "DevOps Engineer (Freelance)",
+    summary:
+      "Automated and deployed a secure, scalable multi-tier microservice app for an international Christian dating app using AWS services and serverless architecture, including VPC, EC2, MongoDB, and CloudWatch monitoring.",
+  },
   {
     company: "Newsbridge AI",
     role: "Cloud & DevOps Engineer",
