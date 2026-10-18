@@ -160,9 +160,9 @@ export const certifications = [
     year: "2024",
   },
   {
-    name: "Kubernetes African Developer Training Program (KADT)",
+    name: "Kubernetes Cloud Native Associate (KCNA)",
     issuer: "Andela",
-    credentialUrl: "",
+    credentialUrl: "https://drive.google.com/file/d/1KTlm_VWGxx4CjiXQHreAY2Bbe1efqD98/view?usp=sharing",
     year: "2026",
   },
 ];
@@ -249,7 +249,7 @@ export const experience = [
   },
   {
     company: "Newsbridge AI",
-    role: "Cloud & DevOps Engineer",
+    role: "DevOps Engineer",
     summary:
       "Building and maintaining cloud infrastructure, deployment automation, and reliable delivery workflows.",
   },
